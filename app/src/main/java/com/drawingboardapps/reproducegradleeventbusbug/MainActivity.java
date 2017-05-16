@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,5 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe
+    public void onData(Object o){
+        //do nothing
     }
 }
